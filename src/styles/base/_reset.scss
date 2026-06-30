@@ -1,0 +1,106 @@
+@layer {
+  *,
+  *::before,
+  *::after {
+    /* Use a more intuitive box-sizing model */
+    box-sizing: border-box;
+  }
+
+  * {
+    /* Remove all margins and padding */
+    padding: 0;
+    margin: 0;
+  }
+
+  *:focus {
+    /* Remove default outline during focus */
+    outline: none;
+  }
+
+  html {
+    line-height: 1.5;
+
+    /* Prevent the browser from synthesizing missing typefaces */
+    font-synthesis: none;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+
+    /* Prevent mobile browsers increasing font-size */
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+
+    /* Fill viewport */
+    block-size: 100%;
+  }
+
+  body {
+    /* Fill viewport */
+    block-size: 100%;
+  }
+
+  p {
+    /* Avoid text overflow */
+    overflow-wrap: break-word;
+
+    /* Numbers have different widths (natural spacing) */
+    font-variant-numeric: proportional-nums;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    /* Avoid text overflow */
+    overflow-wrap: break-word;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    /* Inherit parent's font properties */
+    font: inherit;
+    color: inherit;
+
+    /* Remove preset background */
+    background: none;
+
+    /* Remove preset border */
+    border: none;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  iframe {
+    display: block;
+
+    /* Prevents it from outgrowing container */
+    max-width: 100%;
+
+    /* Maintain aspect ratio */
+    height: auto;
+  }
+
+  svg {
+    /* Prevents it from outgrowing container */
+    max-width: 100%;
+  }
+
+  a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}

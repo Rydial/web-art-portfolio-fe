@@ -1,0 +1,9 @@
+.errorScreen {
+  @include flex-center;
+  @include square(100%);
+}
+
+.errorText {
+  font-size: 28px;
+  font-weight: bold;
+}

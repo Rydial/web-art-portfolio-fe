@@ -1,0 +1,51 @@
+.page {
+  @include flex-col;
+  align-items: center;
+  gap: 20px;
+
+  width: $content-width;
+}
+
+.title {
+  width: 100%;
+
+  font-size: 34px;
+  font-weight: normal;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 1px 0 0 #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 20px;
+}
+
+.card {
+  position: relative;
+
+  &:hover .cardMeta {
+    opacity: 1;
+  }
+
+  * {
+    pointer-events: none;
+  }
+}
+
+.imageWrap {
+  img {
+    object-fit: cover;
+  }
+}
+
+.cardMeta {
+  @include square(100%);
+  color: $color-bg-primary;
+  background-color: rgba(black, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  padding: 16px;
+}

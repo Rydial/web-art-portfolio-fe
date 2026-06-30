@@ -1,0 +1,36 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main] # change to "master" if that's your default branch
+  workflow_dispatch: # manual deployment button on Github
+
+permissions:
+  contents: write # required so the action can push to the build branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+
+      - name: Deploy dist/ to build branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: build # this is the branch Hostinger's Git deploy will watch
+          folder: dist # Vite's default build output folder
+          clean: true # wipes old files before pushing new build
