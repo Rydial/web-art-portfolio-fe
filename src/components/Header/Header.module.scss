@@ -1,0 +1,99 @@
+.header {
+  @include flex-row;
+  height: 116px;
+  width: 100%;
+  padding: 25px;
+
+  background-color: #106177;
+  color: $color-bg-primary;
+
+  justify-content: center;
+}
+
+.inner {
+  @include flex-row;
+  max-width: $content-width;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.title {
+  @include flex-col;
+}
+
+.titleMain {
+  font-size: 44px;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.titleSub {
+  font-size: 16px;
+}
+
+.nav {
+  @include flex-col;
+  justify-content: center;
+}
+
+.nav > ul {
+  @include flex-row;
+  gap: 20px;
+}
+
+.navItem {
+  height: 40px;
+  border-radius: 2px;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(white, 0.3);
+  }
+
+  > *:not(.dropdown) {
+    @include flex-center;
+    height: 100%;
+    padding: 0 12px;
+  }
+}
+
+.navMenu {
+  @include flex-row;
+  padding: 0 12px;
+  gap: 8px;
+}
+
+.navMenuCaret {
+  font-size: 8px;
+  line-height: 3;
+}
+
+.dropdown {
+  background-color: $color-bg-secondary;
+  color: $color-text-secondary;
+  min-width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+
+  li {
+    display: block;
+  }
+}
+
+.dropdownOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dropdownLink {
+  white-space: nowrap;
+  padding: 6px 12px;
+
+  &:hover {
+    background-color: rgba(black, 0.1);
+  }
+}

@@ -1,0 +1,47 @@
+.slideshow {
+  @include square(100%);
+}
+
+.frame {
+  position: relative;
+  @include square(100%);
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity $dur-slow $ease;
+  pointer-events: none;
+
+  &:hover {
+    .artworkMeta {
+      opacity: 1;
+    }
+  }
+}
+
+.slideActive {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.imageWrap {
+  @include square(100%);
+
+  img {
+    @include square(100%);
+    object-fit: cover;
+  }
+}
+
+.artworkMeta {
+  @include square(100%);
+  color: $color-bg-primary;
+  background-color: rgba(black, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  padding: 16px;
+}
